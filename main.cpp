@@ -2,12 +2,18 @@
 
 using namespace std;
 
-// TODO: Implementar función para calcular la suma de los dígitos de un número
+// TODO: Calcular la suma de los dígitos de un número
 int sumaDigitos(int n) {
-    // Completa esta función
+    int suma = 0;
+    while (n > 0) {
+        suma += n % 10; // Extrae el último dígito y lo suma
+        n /= 10;        // Elimina el último dígito
+    }
+    return suma;
 }
 
-// TODO: Implementar la lógica para calcular la tarifa
+
+// TODO: lógica para calcular la tarifa
 double calcularTarifa(int horas, int dia) {
     const double TARIFA_PRIMERA_HORA = 6.00;
     const double TARIFA_1_A_3 = 4.00;
@@ -24,34 +30,36 @@ double calcularTarifa(int horas, int dia) {
 
     double totalPagar = 0.0;
 
-    // TODO: Implementar la lógica para calcular la tarifa base
-    if (horas == 1) {
-        // Completa aquí
+    // TODO: lógica para calcular la tarifa base
+    if (horas <= 1) {
+        totalPagar= TARIFA_PRIMERA_HORA;
     } else if (horas > 1 && horas <= 3) {
-        // Completa aquí
+        totalPagar = TARIFA_PRIMERA_HORA + (horas - 1) * TARIFA_1_A_3;
     } else if (horas > 3 && horas <= 5) {
-        // Completa aquí
+        totalPagar = TARIFA_PRIMERA_HORA + 2 * TARIFA_1_A_3 + (horas - 3) * TARIFA_3_A_5;
     } else {
-        // Completa aquí
+        totalPagar = TARIFA_FIJA;
     }
 
-    // TODO: Aplicar incremento si es fin de semana
-    if (/* Completa esta condición */1) {
+    // TODO: incremento si es fin de semana
+    if (dia == 6 || dia == 7) {
         totalPagar *= INCREMENTO_FIN_SEMANA;
     }
 
-    // TODO: Aplicar descuento si la suma de los dígitos es múltiplo de 3
-    if (/* Completa esta condición */1) {
+    // TODO: descuento si la suma de los dígitos es múltiplo de 3
+    if (sumaDigitos(horas) % 3 == 0) {
         totalPagar *= DESCUENTO_DIGITOS;
     }
 
     return totalPagar;
+
 }
 
 int main() {
     int horas, dia;
 
-    // Leer los valores de entrada
+    cout << "Ingrese dos numeros separados con espacios:" << endl;
+    cout << "El primero es para las orbitas, y el segundo para los dias sabiendo que (1 = lunes y 7 = domingo):" << endl;
     cin >> horas >> dia;
 
     double resultado = calcularTarifa(horas, dia);
@@ -59,7 +67,9 @@ int main() {
         cout << "ERROR" << endl;
     } else {
         printf("%.2f\n", resultado);
+
     }
 
     return 0;
+
 }
