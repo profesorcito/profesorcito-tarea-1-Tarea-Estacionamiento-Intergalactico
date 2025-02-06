@@ -58,8 +58,8 @@ double calcularTarifa(int horas, int dia) {
 int main() {
     int horas, dia;
 
-    cout << "Ingrese dos numeros separados con espacios:" << endl;
-    cout << "El primero es para las orbitas, y el segundo para los dias sabiendo que (1 = lunes y 7 = domingo):" << endl;
+   // cout << "Ingrese dos numeros separados con espacios:" << endl;
+   // cout << "El primero es para las orbitas, y el segundo para los dias sabiendo que (1 = lunes y 7 = domingo):" << endl;
     cin >> horas >> dia;
 
     double resultado = calcularTarifa(horas, dia);
