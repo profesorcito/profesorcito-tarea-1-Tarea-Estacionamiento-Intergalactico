@@ -1,6 +1,6 @@
 # **👽 Tarea - Estacionamiento Intergaláctico** 🚀
 
-## **📢🚨 FECHA LÍMITE: 10 de FEBRERO - 10:00 AM 🚨📢**  
+## **📢🚨 FECHA LÍMITE: 11 de SEPTIEMBRE - 10:00 AM 🚨📢**  
 ⚠️ **ENTREGAS FUERA DE TIEMPO NO SERÁN ACEPTADAS.**  
 ✅ **Haz `commit` y `push` antes del plazo y verifica tu entrega en GitHub Classroom.**
 
